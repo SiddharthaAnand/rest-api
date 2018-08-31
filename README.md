@@ -9,16 +9,17 @@ The data came from https://dblp.uni-trier.de/. For more information, you can
 refer to this site.
 
 ## What kind of data is available from the api ?
-
+WIP
 ## How to get the data ?
-
+WIP
 ## Are there any rate-limits ?
-
+WIP
 ## Things left to do
-
+WIP
 ## How did you collect the data ?
 In order to get the data, I used scrapy framework to collect information from
 this database. It is a publicly available data and it has been scraped 
 according to the robots.txt file.
 
 ## How to contribute ?
+WIP
