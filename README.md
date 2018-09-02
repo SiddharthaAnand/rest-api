@@ -23,3 +23,9 @@ according to the robots.txt file.
 
 ## How to contribute ?
 WIP
+
+## Understanding the structure of the rest-api
+It will have the following operations:
+```
+/api/v1/
+```
