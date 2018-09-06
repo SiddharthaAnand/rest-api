@@ -60,3 +60,19 @@ WIP
 You can definitely help us make this api better with your suggestions,
 pull requests, issues or bug-fixes. We welcome any and every suggestion 
 to improve this api for all.
+
+First step is to clone this repository:
+```
+git clone https://github.com/SiddharthaAnand/rest-api.git
+```
+Second step is to install the required packages using requirements.txt.
+
+Change to the project directory and then the
+run the server.py.
+```
+python server.py
+```
+
+Now, send a request from the browser to 
+http://0.0.0.0:5000/api/v1/author. You will get 
+the response.
