@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   description: This is the swagger file that goes with our server code
   version: "1.0.0"
-  title: Swagger REST Article
+  title: Swagger REST UI
 consumes:
   - "application/json"
 produces:
@@ -12,23 +12,25 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /people:
+  /author:
     get:
-      operationId: "people.read"
+      operationId: "author.read_author"
       tags:
-        - "People"
-      summary: "The people data structure supported by the server application"
-      description: "Read the list of people"
+        - "Author"
+      summary: "The author data structure supported by the server application"
+      description: "Read the author information"
       responses:
         200:
-          description: "Successful read people list operation"
+          description: "Successful read author list operation"
           schema:
             type: "array"
             items:
               properties:
-                fname:
+                author:
                   type: "string"
-                lname:
+                author_articles_published:
                   type: "string"
-                timestamp:
+                coauthors_name_list:
+                  type: "string"
+                date:
                   type: "string"
