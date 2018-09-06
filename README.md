@@ -38,6 +38,11 @@ the strength of the relationship between authors.
 ## Understanding the structure of the rest-api
 It will have the following operations:
 ```
+/api/v1/author/
+```
+This returns the list of authors with a limit of 
+given size.
+```
 /api/v1/<author_name>/
 ```
 This will return the author information based on the author name sent 

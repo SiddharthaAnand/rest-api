@@ -31,11 +31,11 @@ AUTHOR = {
 # Create a handler for our read (GET) people
 def read_author():
     """
-    This function responds to a request for /api/people
-    with the complete lists of people
+    This function responds to a request for /api/v1/author
+    with the complete lists of authors
 
-    :return:        sorted list of people
+    :return:        sorted list of authors
     """
-    # Create the list of people from our data
-    return [AUTHOR[key] for key in sorted(AUTHOR.keys())]
+    # Create the list of authors from our data
+    return AUTHOR
 

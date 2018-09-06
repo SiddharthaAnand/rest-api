@@ -12,7 +12,7 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /author:
+  /v1/author:
     get:
       operationId: "author.read_author"
       tags:
