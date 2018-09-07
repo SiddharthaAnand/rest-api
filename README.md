@@ -54,7 +54,7 @@ This will return the list of co-authors of the specified author sent
 in the api endpoint.
 
 ## Things to do
--[ ] Designing the structure of the returned data (mostly in json).
+-[ ] Designing the structure of the returned data (mostly in json)
 -[ ] Design the GET API
 -[ ] Modify the data returned in GET Request
 -[ ] Add user-authentication module
@@ -63,6 +63,7 @@ in the api endpoint.
 -[ ] Writing the modules based on REST architecture
 -[ ] Writing tests for the modules
 -[ ] Designing the Swagger UI for better usage
+-[ ] Implement pagination
 
 ## How to contribute ?
 You can definitely help us make this api better with your suggestions,
@@ -84,3 +85,34 @@ python server.py
 Now, send a request from the browser to 
 http://0.0.0.0:5000/api/v1/author. You will get 
 the response.
+
+## How to start the api locally ?
+Follow the steps described in the How to contribute section. 
+Now, change to the working directory.
+```
+cd rest-api/
+``` 
+You will be able to see templates/ directory and other files.
+Since, you have set-up the virtual-env and other packages required,
+you can simply run
+```
+python server.py
+```
+This will show an output like the following:
+```
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 203-877-106
+ ```
+ 
+ If you are able to see this, then congratulations, you can use 
+ the browser to send a request to http://0.0.0.0:5000/api/v1/people
+ to see the data. You can also use swagger to view it using swagger
+ configuration at this link http://0.0.0.0:5000/api/ui.
+ 
