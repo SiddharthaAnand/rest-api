@@ -26,11 +26,13 @@ paths:
             type: "array"
             items:
               properties:
-                author:
+                author_name:
                   type: "string"
                 author_articles_published:
                   type: "string"
                 coauthors_name_list:
                   type: "string"
                 date:
+                  type: "string"
+                author_community:
                   type: "string"
