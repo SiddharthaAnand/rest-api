@@ -54,16 +54,16 @@ This will return the list of co-authors of the specified author sent
 in the api endpoint.
 
 ## Things to do
--[ ] Designing the structure of the returned data (mostly in json)
--[ ] Design the GET API
--[ ] Modify the data returned in GET Request
--[ ] Add user-authentication module
--[ ] Add logging module for incoming requests/responses
--[ ] Understand the intricacies of the rest-api design
--[ ] Writing the modules based on REST architecture
--[ ] Writing tests for the modules
--[ ] Designing the Swagger UI for better usage
--[ ] Implement pagination
+- [ ] Designing the structure of the returned data (mostly in json)
+- [ ] Design the GET API
+- [ ] Modify the data returned in GET Request
+- [ ] Add user-authentication module
+- [ ] Add logging module for incoming requests/responses
+- [ ] Understand the intricacies of the rest-api design
+- [ ] Writing the modules based on REST architecture
+- [ ] Writing tests for the modules
+- [ ] Designing the Swagger UI for better usage
+- [ ] Implement pagination
 
 ## How to contribute ?
 You can definitely help us make this api better with your suggestions,
