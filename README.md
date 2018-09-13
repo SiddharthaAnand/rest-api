@@ -43,7 +43,7 @@ It will have the following operations:
 This returns the list of authors with a limit of 
 given size.
 ```
-/api/v1/<author_name>/
+/api/v1/{author_name}/
 ```
 This will return the author information based on the author name sent 
 in the api endpoint. 
@@ -116,3 +116,5 @@ This will show an output like the following:
  to see the data. You can also use swagger to view it using swagger
  configuration at this link http://0.0.0.0:5000/api/ui.
  
+## Disclaimer
+This api is still in development mode.
