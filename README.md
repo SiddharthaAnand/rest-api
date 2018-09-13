@@ -115,6 +115,11 @@ This will show an output like the following:
  the browser to send a request to http://0.0.0.0:5000/api/v1/people
  to see the data. You can also use swagger to view it using swagger
  configuration at this link http://0.0.0.0:5000/api/ui.
- 
+
+## Using Swagger
+You can start using the api by going to http://0.0.0.0:5000/api/ui.
+Here you can see how the api works with a handy and user-friendly
+UI to help you out.
+
 ## Disclaimer
 This api is still in development mode.
