@@ -12,16 +12,45 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
+  /v1/{author_name}:
+    get:
+      parameters:
+        - in: path
+          name: author_name
+          required: true
+          type: "string"
+          description: Author name
+      operationId: "author.get_author_information"
+      tags:
+        - "Author"
+      summary: "The author data based on author name"
+      description: "Get author information based on author name"
+      responses:
+        200:
+          description: "Successful author information"
+          schema:
+            type: "object"
+            items:
+              properties:
+                author_name:
+                  type: "string"
+                author_articles_published:
+                  type: "object"
+                coauthors_name_list:
+                    type: "object"
+                author_community:
+                    type: "object"
+
   /v1/author:
     get:
       operationId: "author.read_author"
       tags:
         - "Author"
       summary: "The author data structure supported by the server application"
-      description: "Read the author information"
+      description: "Read the authors' information"
       responses:
         200:
-          description: "Successful read author list operation"
+          description: "Successful read authors' list operation"
           schema:
             type: "array"
             items:

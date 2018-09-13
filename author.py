@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 
 def get_timestamp():
@@ -6,7 +7,7 @@ def get_timestamp():
 
 
 # Data to serve with our API
-AUTHOR = {
+AUTHORS = {
   "author_one": {
     "author_name": "Siddhartha Anand",
     "author_community": [
@@ -28,7 +29,7 @@ AUTHOR = {
     "some_more_author_key": []
   },
   "author_two": {
-   "author_name": "Partha Basuchowdhuri",
+    "author_name": "Partha Basuchowdhuri",
     "author_community": [
       "community 1",
       "community 2",
@@ -50,6 +51,18 @@ AUTHOR = {
 }
 
 
+def get_author_information(author_name):
+    """
+    This method returns the information of the author if available;
+    :return:    author information
+    """
+    for author in AUTHORS:
+        if author_name == AUTHORS[author]["author_name"]:
+            return AUTHORS[author]
+
+    return "No such author exists"
+
+
 # Create a handler for our read (GET) people
 def read_author():
     """
@@ -59,5 +72,5 @@ def read_author():
     :return:        sorted list of authors
     """
     # Create the list of authors from our data
-    return AUTHOR
+    return AUTHORS
 
