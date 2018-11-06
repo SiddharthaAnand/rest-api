@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  description: This is the swagger file that goes with our server code
+  description: Welcome to my REST API documentation page :)
   version: "1.0.0"
-  title: Swagger REST UI
+  title: Computer Science Researchers data
 consumes:
   - "application/json"
 produces:
@@ -12,19 +12,19 @@ basePath: "/api"
 
 # Paths supported by the server application
 paths:
-  /v1/{author_name}:
+  /v1/authors/{author_name}:
     get:
       parameters:
         - in: path
           name: author_name
           required: true
           type: "string"
-          description: Author name
+          description: name of the author/researcher
       operationId: "author.get_author_information"
       tags:
         - "Author"
       summary: "The author data based on author name"
-      description: "Get author information based on author name"
+      description: "Get author information based on author name."
       responses:
         200:
           description: "Successful author information"
@@ -41,13 +41,13 @@ paths:
                 author_community:
                     type: "object"
 
-  /v1/author:
+  /v1/authors:
     get:
-      operationId: "author.read_author"
+      operationId: "author.get_list_of_authors"
       tags:
         - "Author"
       summary: "The author data structure supported by the server application"
-      description: "Read the authors' information"
+      description: "Read the authors' information."
       responses:
         200:
           description: "Successful read authors' list operation"

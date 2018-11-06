@@ -1,4 +1,5 @@
 from datetime import datetime
+from mongo_driver import MongoClientConnection
 import json
 
 
@@ -64,13 +65,15 @@ def get_author_information(author_name):
 
 
 # Create a handler for our read (GET) people
-def read_author():
+def get_list_of_authors():
     """
     This function responds to a request for /api/v1/author
     with the complete lists of authors
 
     :return:        sorted list of authors
     """
-    # Create the list of authors from our data
+    query_controller = MongoClientConnection("test", "testConnection")
+    query_controller.read()
+
     return AUTHORS
 
