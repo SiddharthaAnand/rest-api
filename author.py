@@ -71,7 +71,8 @@ def get_list_of_authors():
     :return:        sorted list of authors
     """
     query_controller = MongoClientConnection("test", "testConnection")
-    data_cache = query_controller.read_all()
+    query_controller.read_all()
+    data_cache = query_controller.create_json()
 
     return data_cache
 
