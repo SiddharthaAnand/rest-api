@@ -26,8 +26,7 @@ AUTHORS = {
       "Riya Roy",
       "Sanjoy Kumar Saha",
       "Diksha Roy Srivastava"
-    ],
-    "some_more_author_key": []
+    ]
   },
   "author_two": {
     "author_name": "Partha Basuchowdhuri",
@@ -46,8 +45,7 @@ AUTHORS = {
       "Riya Roy",
       "Sanjoy Kumar Saha",
       "Diksha Roy Srivastava"
-    ],
-    "some_more_author_key": []
+    ]
   }
 }
 
@@ -73,7 +71,7 @@ def get_list_of_authors():
     :return:        sorted list of authors
     """
     query_controller = MongoClientConnection("test", "testConnection")
-    query_controller.read()
+    data_cache = query_controller.read_all()
 
-    return AUTHORS
+    return data_cache
 
