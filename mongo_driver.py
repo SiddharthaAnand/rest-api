@@ -18,23 +18,31 @@ class MongoClientConnection(object):
 		self.username, self.pwd, self.url = read_credential.read_credential("credentials")
 		self.mongo_url = "mongodb://"+self.username+":" + self.pwd + self.url
 		self.create_connection(self.database, self.collection)
+		self.cursor = None
 		print "url: ", self.mongo_url
 
 	def create_connection(self, database="test", collection="testCollection"):
 		self.client  = pymongo.MongoClient(self.mongo_url)
 		self.db = self.client.test
-		print "Connectionc created..."
+		print "Connection created..."
 
 	def read_all(self):
 		# Returns a Cursor to the collection in the database.
-		cursor = self.db.testCollection.find()
+		self.cursor = self.db.testCollection.find()
 		print "cursor here------"
-		data_cache = []
-		for doc in self.db.testCollection.find():
-			#data_cache.append(dict(doc))
-			print doc
 		self.client.close()
-		return data_cache
+
+
+	def create_json(self):
+		data_cache = []
+		single_data = {}
+		for doc in self.cursor:
+			single_data = {}
+			for key in doc:
+				if "_id" not in str(key):
+					single_data[str(key)] = doc[key]
+			data_cache.append(single_data)
+		return  data_cache
 
 	def write(self, data=None):
 		pass
