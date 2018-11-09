@@ -10,5 +10,6 @@ def read_credential(file_name=None):
 	pwd = _lines[1].strip().split()[1]
 	url = _lines[2].strip().split()[1]
 	print user_name, pwd, url
+	return user_name, pwd, url
 
-read_credential("credentials")
+#read_credential("credentials")
