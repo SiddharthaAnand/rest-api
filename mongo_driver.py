@@ -19,7 +19,6 @@ class MongoClientConnection(object):
 		self.mongo_url = "mongodb://{username}:{pwd}{url}".format(username=self.username, pwd=self.pwd, url=self.url)
 		self.create_connection(self.database, self.collection)
 		self.cursor = None
-		print "url: ", self.mongo_url
 
 	def create_connection(self, database="test", collection="testCollection"):
 		self.client  = pymongo.MongoClient(self.mongo_url)

@@ -1,5 +1,6 @@
-import os
-
+'''
+method to read stored credentials from a file to connect to the mongo database.
+'''
 def read_credential(file_name=None):
 
 	_file = open(file_name, "r")
@@ -12,4 +13,3 @@ def read_credential(file_name=None):
 	print user_name, pwd, url
 	return user_name, pwd, url
 
-#read_credential("credentials")
