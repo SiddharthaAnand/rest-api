@@ -16,7 +16,7 @@ class MongoClientConnection(object):
 		self.client = None
 		self.db = None
 		self.username, self.pwd, self.url = read_credential.read_credential("credentials")
-		self.mongo_url = "mongodb://"+self.username+":" + self.pwd + self.url
+		self.mongo_url = "mongodb://{username}:{pwd}{url}".format(username=self.username, pwd=self.pwd, url=self.url)
 		self.create_connection(self.database, self.collection)
 		self.cursor = None
 		print "url: ", self.mongo_url
@@ -42,7 +42,7 @@ class MongoClientConnection(object):
 				if "_id" not in str(key):
 					single_data[str(key)] = doc[key]
 			data_cache.append(single_data)
-		return  data_cache
+		return data_cache
 
 	def write(self, data=None):
 		pass
