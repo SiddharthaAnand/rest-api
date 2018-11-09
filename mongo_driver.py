@@ -25,16 +25,20 @@ class MongoClientConnection(object):
 		self.db = self.client.test
 		print "Connection created..."
 
+	'''
+	Read contents of collection from the mongo db server.
+	'''
 	def read_all(self):
 		# Returns a Cursor to the collection in the database.
 		self.cursor = self.db.testCollection.find()
 		print "cursor here------"
 		self.client.close()
 
-
+	'''
+	Create a data in json format to be returned to the client.
+	'''
 	def create_json(self):
 		data_cache = []
-		single_data = {}
 		for doc in self.cursor:
 			single_data = {}
 			for key in doc:
