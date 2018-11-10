@@ -55,11 +55,11 @@ def get_author_information(author_name):
     This method returns the information of the author if available;
     :return:    author information
     """
-    for author in AUTHORS:
-        if author_name == AUTHORS[author]["author_name"]:
-            return AUTHORS[author]
+    query_controller = MongoClientConnection("test", "testConnection")
+    query_controller.get_author(author_name)
+    data_cache = query_controller.create_json()
 
-    return "No such author exists"
+    return data_cache
 
 
 # Create a handler for our read (GET) people

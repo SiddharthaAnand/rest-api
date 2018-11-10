@@ -43,8 +43,6 @@ class MongoClientConnection(object):
 
 		except Exception as e:
 			return e
-		finally:
-			self.client.close()
 
 	'''
 	Create a data in json format to be returned to the client.
@@ -71,3 +69,10 @@ class MongoClientConnection(object):
 	def write_many(self, data=None):
 		pass
 
+	def get_author(self, author_name=None):
+		if author_name:
+			try:
+				self.cursor = self.db.testCollection.find({"author_name":author_name})
+				print "author: ", author_name
+			except Exception as e:
+				print e
