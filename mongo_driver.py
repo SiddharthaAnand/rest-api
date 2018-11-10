@@ -1,4 +1,5 @@
 # Connection Client for MongoDB Database Server.
+# @author: Siddhartha Anand
 
 import pymongo
 import read_credential
