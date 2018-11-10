@@ -22,18 +22,29 @@ class MongoClientConnection(object):
 		self.cursor = None
 
 	def create_connection(self, database="test", collection="testCollection"):
-		self.client  = pymongo.MongoClient(self.mongo_url)
-		self.db = self.client.test
-		print "Connection created..."
+		try:
+			self.client  = pymongo.MongoClient(self.mongo_url)
+			self.db = self.client.test
+			print "Connection created..."
+		except Exception as e:
+			print e
 
 	'''
 	Read contents of collection from the mongo db server.
 	'''
-	def read_all(self):
+	def read_all(self, sort=None):
 		# Returns a Cursor to the collection in the database.
-		self.cursor = self.db.testCollection.find()
-		print "cursor here------"
-		self.client.close()
+		try:
+			if sort in ["author_name"]:
+				self.cursor = self.db.testCollection.find().sort([(sort, pymongo.ASCENDING)])
+			else:
+				self.cursor = self.db.testCollection.find()
+			print "cursor here------"
+
+		except Exception as e:
+			return e
+		finally:
+			self.client.close()
 
 	'''
 	Create a data in json format to be returned to the client.
@@ -49,7 +60,13 @@ class MongoClientConnection(object):
 		return data_cache
 
 	def write(self, data=None):
-		pass
+		if data:
+			try:
+				status = self.db.testCollection.insert_one(data)
+				if isinstance(status, pymongo.result.InsertOneResult):
+					return "Successful Inserted document"
+			except Exception as e:
+				print e
 
 	def write_many(self, data=None):
 		pass

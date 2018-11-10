@@ -76,3 +76,10 @@ def get_list_of_authors():
 
     return data_cache
 
+
+def sort_results(sort=None):
+    query_controller = MongoClientConnection("test", "testConnection")
+    query_controller.read_all(sort=sort)
+    data_cache = query_controller.create_json()
+
+    return data_cache
