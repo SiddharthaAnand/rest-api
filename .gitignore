@@ -1,3 +1,7 @@
+#.gitignore
+.gitignore
+#coverage
+.coverage
 # idea files
 .idea/
 # pyc files
