@@ -1,5 +1,7 @@
 {
-  "author_one": {
+  "status": "ok",
+  "total_results": 2,
+  "author_information": [{
     "author_name": "Siddhartha Anand",
     "author_community": [
       "community 1",
@@ -18,9 +20,8 @@
       "Diksha Roy Srivastava"
     ],
     "some_more_author_key": []
-  },
-  "author_two": {
-   "author_name": "Partha Basuchowdhuri",
+  }, {
+    "author_name": "Partha Basuchowdhuri",
     "author_community": [
       "community 1",
       "community 2",
@@ -38,5 +39,5 @@
       "Diksha Roy Srivastava"
     ],
     "some_more_author_key": []
-  }
+  }]
 }
