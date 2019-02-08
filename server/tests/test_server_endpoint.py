@@ -12,13 +12,14 @@ class TestEndpoint(unittest.TestCase):
     """
 
     def setUp(self):
+        """
+        If you want the request context to be tested as well,
+        use the app.test_client() with 'with' keyword.
+        :return:
+        """
         self.app = create_app("testing")
         self.app.testing = True
         self.client = self.app.test_client(self)
-        # ctx = self.app.app_context()
-        # ctx.push()
-        # yield self.client
-        # ctx.pop()
 
     '''
     def test_get_author(self):
@@ -36,14 +37,16 @@ class TestEndpoint(unittest.TestCase):
 
     def test_say_hello(self):
         """ Test the app is alive or not."""
-        with self.client:
-            response = self.client.get('/')
-            json_resp = json.loads(response.data)
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(json_resp, {'route': '/', 'answer': 'hello there! I am alive :)'})
+        # with self.client:
+        response = self.client.get('/')
+        json_resp = json.loads(response.data)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(json_resp, {'route': '/', 'answer': 'hello there! I am alive :)'})
 
     def tearDown(self):
         pass
 
+
 if __name__ == '__main__':
     unittest.main()
+
