@@ -1,9 +1,6 @@
 import unittest
-import os
-import re
 import json
 from ..app import create_app
-from flask import jsonify
 
 
 class TestEndpoint(unittest.TestCase):
@@ -41,7 +38,8 @@ class TestEndpoint(unittest.TestCase):
         response = self.client.get('/')
         json_resp = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(json_resp, {'route': '/', 'answer': 'hello there! I am alive :)'})
+        self.assertEqual(json_resp, {'route': '/',
+                                     'answer': 'hello there! I am alive :)'})
 
     def tearDown(self):
         pass
@@ -49,4 +47,3 @@ class TestEndpoint(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
