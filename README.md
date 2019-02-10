@@ -1,5 +1,7 @@
 # REST-API to get information on Computer Science Researchers
 
+[![Build Status](https://travis-ci.org/SiddharthaAnand/rest-api.svg?branch=master)](https://travis-ci.org/SiddharthaAnand/rest-api)
+
 A rest-api for obtaining information about the computer science researchers,
 their co-authorship network, their list of papers, the years that they published 
 those papers and many more.
