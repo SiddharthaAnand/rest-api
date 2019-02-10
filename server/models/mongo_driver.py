@@ -1,12 +1,15 @@
-# Connection Client for MongoDB Database Server.
-# @author: Siddhartha Anand
+"""
+Connection Client for MongoDB Database Server.
+@author: Siddhartha Anand
+"""
 
 import pymongo
 import read_credential
 
-'''
+"""
 A client class which uses pymongo driver to connect to Mongo Atlas Cloud Free Tier Account.
-'''
+"""
+
 
 class MongoClientConnection(object):
 
@@ -29,10 +32,10 @@ class MongoClientConnection(object):
 		except Exception as e:
 			print e
 
-	'''
-	Read contents of collection from the mongo db server.
-	'''
 	def read_all(self, sort=None):
+		"""
+			Read contents of collection from the mongo db server.
+		"""
 		# Returns a Cursor to the collection in the database.
 		try:
 			if sort in ["author_name"]:
@@ -44,10 +47,10 @@ class MongoClientConnection(object):
 		except Exception as e:
 			return e
 
-	'''
-	Create a data in json format to be returned to the client.
-	'''
 	def create_json(self):
+		"""
+			Create a data in json format to be returned to the client.
+		"""
 		data_cache = []
 		for doc in self.cursor:
 			single_data = {}
