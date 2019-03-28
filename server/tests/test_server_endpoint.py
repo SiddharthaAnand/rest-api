@@ -18,19 +18,17 @@ class TestEndpoint(unittest.TestCase):
         self.app.testing = True
         self.client = self.app.test_client(self)
 
-    '''
     def test_get_author(self):
         """
         Test GETting the author json object.
         :return:
         """
-        response = self.client().get('/api/v1/<author>')
+        response = self.client.get('/api/v1/author/Siddhartha Anand')
         self.assertEqual(response.status_code, 200)
-        json_resp = json.load(response.data)
+        json_resp = json.loads(response.data)
         self.assertEqual(json_resp['status'], "ok")
-        self.assertEqual(json_resp['total_results'], re.compile([0-9]))
-        self.assertIsInstance(json_resp['author_information'], list)
-    '''
+        self.assertEqual(json_resp['total_results'], 1)
+        self.assertEqual(json_resp['name'], "Siddhartha Anand")
 
     def test_say_hello(self):
         """ Test the app is alive or not."""

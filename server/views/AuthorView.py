@@ -19,7 +19,7 @@ def get_author_information(author_name):
 
     :return:
     """
-    return custom_response({'author_name': author_name}, 200)
+    return custom_response({'name': author_name, 'total_results': 1, 'status': 'ok'}, 200)
 
 
 def custom_response(res, status_code):
