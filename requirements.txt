@@ -21,7 +21,7 @@ more-itertools==5.0.0
 pathlib==1.0.1
 pathlib2==2.3.3
 pluggy==0.8.1
-py==1.7.0
+py==1.10.0
 pycodestyle==2.5.0
 pymongo==3.7.2
 pytest==4.2.0
